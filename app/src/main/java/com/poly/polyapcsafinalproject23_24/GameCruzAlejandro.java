@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,93 +34,145 @@ public class GameCruzAlejandro extends GameActivity {
         //initialize number of lives
         numLives = 5;
         //create a scanner object for user input
-        scan = new Scanner(System.in);
 
         //create a player object (optional)
         //player = new Person(...)
 
         //display project title and description
 
-        String text = """
-      Halloween mischeif
-      For Halloween, you decide to be a complete savage and need to decide, where would you want to cause mischief?
-      """;
-        System.out.println(text);
+        tvTitle.setText("Halloween Mischeif");
+        tvSubtitle.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText("For Halloween, you decide to be a complete savage and need to decide, where would you want to cause mischief?");
+
+        setAllBtnsVisible();
+
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
 
 
-        start();
+
+    }
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
     }
 
     private void start()
     {
 
-        //start adventure here
-        String text = """
-      You are trying to decide where you are going to go cause some chaos?
-      Options
-      1. Cemetary
-      2. Carnival
-      3. Neighborhood
-      """;
-        System.out.println(text);
-        int option = Util.enterInt(1,3);
+        tvStoryText.setText("You are trying to decide where you are going to go cause some chaos?");
 
-        if (option == 1)
-        {
-            goToCemetary();
-        }
-        else if (option == 2)
-        {
-            goToCarnival();
-        }
-        else if (option == 3)
-        {
-            goToNeighborhood();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Cemetary");
+        btn2.setText("Carnival");
+        btn3.setText("Neighborhood");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToCemetary();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToCarnival();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToNeighborhood();
+            }
+        });
+
     }
 
     private void goToCemetary()
     {
 
-        String text = """
-      Once you get there, you start to wonder if you want to keep walking around  or just leave.
-      1. Walk around
-      2. Leave
-      """;
-        System.out.println(text);
+        tvStoryText.setText("Once you get there, you start to wonder if you want to keep walking around  or just leave.");
 
+        setAllBtnsVisible();
+        btn1.setText("Walk around");
+        btn2.setText("Leave");
+        btn3.setVisibility(View.INVISIBLE);
 
-        if (option == 1)
-        {
-            continueWalkingAround();
-        }
-        else if (option == 2)
-        {
-            decideToLeave();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                continueWalkingAround();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                decideToLeave();
+            }
+        });
+
     }
 
 
     private void continueWalkingAround()
     {
 
-        String text = """
-      You find an abandoned house and a shovel and you are trying to decide if you want to trespass and enter the run down home or dig up the tombstones, what will you choose?
-      Options
-      1. Abandoned home
-      2. Dig up the tombstones
-      """;
-        System.out.println(text);
+        tvStoryText.setText("There's an abandoned house and a shovel and you have to choose if you want to enter or dig up the tombstones.");
+
+        setAllBtnsVisible();
+        btn1.setText("Abandoned home");
+        btn2.setText("Dig up the tombstones");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abandonedHome();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                digUpTombstones();
+            }
+        });
+
+    }
+
+    private void digUpTombstones()
+    {
+
+        tvStoryText.setText("Since you decided to dig up the tombstone, you woke up an ancient sorcerer, and he sucked all your life essence.");
+
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        }
 
 
-        if (option == 1)
-        {
-            abandonedHome();
-        }
-        else if (option == 2)
-        {
-            digUpTombstones();
-        }
     }
 
     private void digUpTombstones()
@@ -128,11 +181,24 @@ public class GameCruzAlejandro extends GameActivity {
         String text = """
         Since you decided to dig up the tombstone, it turns out its the tombstone of a sorcerer, and since you disturbed his slumber, he sucks out your life force to replenish his own.Thanks to your insolent bahavior, he rises again and will cause havoc once again...
         
-        YOU DIED! Try again!
+        YOU DIED!
         """;
-        System.out.println(text);
+        tvStoryText.setText(text);
 
-        defeat();
+
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
+
     }
 
     private void decideToLeave()
