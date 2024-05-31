@@ -158,33 +158,7 @@ public class GameCruzAlejandro extends GameActivity {
     private void digUpTombstones()
     {
 
-        tvStoryText.setText("Since you decided to dig up the tombstone, you woke up an ancient sorcerer, and he sucked all your life essence.");
-
-        setAllBtnsVisible();
-        btn1.setText("Try Again");
-        btn2.setVisibility(View.INVISIBLE);
-        btn3.setVisibility(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                defeat();
-            }
-        }
-
-
-    }
-
-    private void digUpTombstones()
-    {
-
-        String text = """
-        Since you decided to dig up the tombstone, it turns out its the tombstone of a sorcerer, and since you disturbed his slumber, he sucks out your life force to replenish his own.Thanks to your insolent bahavior, he rises again and will cause havoc once again...
-        
-        YOU DIED!
-        """;
-        tvStoryText.setText(text);
-
+        tvStoryText.setText("Since you decided to dig up the tombstone, you woke up an ancient sorcerer, and he sucked all your life essence. YOU DIED!");
 
         setAllBtnsVisible();
         btn1.setText("Try Again");
@@ -204,23 +178,46 @@ public class GameCruzAlejandro extends GameActivity {
     private void decideToLeave()
     {
 
-        String text = """
-      You decide to leave, but end up ecountering a person dressed up as a clown  that is holding a machete, what will you do?
-      Options
-      1. Fight the clown
-      2. Submit to the clown
-      """;
-        System.out.println(text);
+        tvStoryText.setText("You decide to leave but you see a killer clown with a machete, you gonna fight it or not?.");
+
+        setAllBtnsVisible();
+        btn1.setText("Fight clown");
+        btn2.setText("Submit to clown");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fightClown();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                submitToClown();
+            }
+        });
+
+    }
+
+    private void fightClown()
+    {
+
+        tvStoryText.setText("Since the clown is fat, you tire him out and take his weapon and eliminate him, then you run off. YOU WIN!");
+
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { ();
+            }
+        });
 
 
-        if (option == 1)
-        {
-            fightClown();
-        }
-        else if (option == 2)
-        {
-            submitToClown();
-        }
     }
 
     private void fightClown()
