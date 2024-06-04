@@ -307,23 +307,27 @@ public class GameCruzAlejandro extends GameActivity {
     private void goToCarnival()
     {
 
-        String text = """
-      Once you get there, you have a choice to just play games or make the people's day miserable, what will you choose?
-      1. Play Games
-      2. Cause chaos
-      """;
-        System.out.println(text);
+        tvStoryText.setText("When you get there, you play games or choose you ruin someone's days.");
 
+        setAllBtnsVisible();
+        btn1.setText("Play games");
+        btn2.setText("Cause chaos");
+        btn3.setVisibility(View.INVISIBLE);
 
-        if (option == 1)
-        {
-            playGames();
-        }
-        else if (option == 2)
-        {
-            causeChaos();
-        }
-    }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playGames();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                causeChaos();
+            }
+        });
+
 
     private void playGames()
     {
