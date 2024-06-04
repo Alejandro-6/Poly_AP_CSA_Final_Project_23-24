@@ -40,7 +40,7 @@ public class GameCruzAlejandro extends GameActivity {
 
         //display project title and description
 
-        tvTitle.setText("Halloween Mischeif");
+        tvTitle.setText("Halloween Mischief");
         tvSubtitle.setVisibility(View.INVISIBLE);
 
         tvStoryText.setText("For Halloween, you decide to be a complete savage and need to decide, where would you want to cause mischief?");
@@ -213,88 +213,96 @@ public class GameCruzAlejandro extends GameActivity {
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { ();
-            }
+            public void onClick(View view) { victory();}
         });
 
 
-    }
-
-    private void fightClown()
-    {
-
-        String text = """
-      You choose to fight the clown, and he's pretty slow and fat, so you take the opportunity to kick him in the nuts, as the clown drops his machete, you   grab it and you stab him in the head, now that you took care of him, you begin to take off and run out of the cemetary, never returning.
-
-      YOU WIN! Try again!
-      """;
-        System.out.println(text);
-
-        start();
     }
 
 
     private void submitToClown()
     {
 
-        String text = """
-      Why? You too scared to fight back or what, you let him get close.The clown  runs at you, tackles you to the ground, gets up and then slices your throat with the machete he had.Then he continuously stabs you in the chest until you black out.
+        tvStoryText.setText("Since your frozen in shock, you let him get too close and he slices you throat and you black out. YOU DIED!");
 
-      YOU DIED! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { defeat();}
+        });
+
+
     }
+
 
     private void abandonedHome()
     {
 
+        tvStoryText.setText("You enter the home and it's dark so you start a fire, but it soon got bigger, choose to...");
 
-        String text = """
-      You enter the building and its completely dark, so you try to start a fire with a pair of rocks and a pile of branches and you managed to succeed but due to the cold breeze the fire got bigger and will soon engulf the entire house in flames will you put out the fire or not?
-      Options
-      1. Put it out
-      2. Let it be
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Put it out");
+        btn2.setText("Let it be");
+        btn3.setVisibility(View.INVISIBLE);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                putItOut();
+            }
+        });
 
-        if (option == 1)
-        {
-            putItOut();
-        }
-        else if (option == 2)
-        {
-            letItBe();
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                letItBe();
+            }
+        });
+
     }
+
 
     private void putItOut()
     {
 
-        String text = """
-      You want to try and put it out, but the fire has gotten too big and you try to leave, but its too late since the flames engulfed the entire house and you begin burning screaming for help, but no one hears you, you continue screaming for help until you are completely burnt to a crisp, meeting a gruesome end.
+        tvStoryText.setText("You try to put it out, but the wind make it bigger and it was too late, you were engulfed in the flames. YOU DIED!");
 
-      YOU DIED! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { defeat();}
+        });
+
+
     }
+
 
     private void letItBe()
     {
 
-        String text = """
-      Instead of putting it out, you just let it be since its an old house, no one will care for an abandoned home, so you just run out of the cemetary with no regrets at all.Fortunately, You were never caught for burning the house.
+        tvStoryText.setText("Instead, you let it burn since it's a old home and you were never caught. YOU WIN!");
 
-      YOU WIN! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        start();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { victory();}
+        });
+
+
     }
+
 
     private void goToCarnival()
     {
@@ -599,6 +607,11 @@ public class GameCruzAlejandro extends GameActivity {
         System.out.println(text);
 
         start();
+    }
+
+    private void victory()
+    {
+
     }
 
 
