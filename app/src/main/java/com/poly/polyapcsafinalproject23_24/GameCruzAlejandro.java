@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -67,6 +68,27 @@ public class GameCruzAlejandro extends GameActivity {
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
+    }
+
+    private void restart() {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn1.setText("Play again");
+        btn2.setText("Quit");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GameCruzAlejandro.this, MainActivity.class));
+            }
+        });
     }
 
     private void start()
@@ -304,8 +326,7 @@ public class GameCruzAlejandro extends GameActivity {
     }
 
 
-    private void goToCarnival()
-    {
+    private void goToCarnival() {
 
         tvStoryText.setText("When you get there, you play games or choose you ruin someone's days.");
 
@@ -329,72 +350,98 @@ public class GameCruzAlejandro extends GameActivity {
         });
 
 
-    private void playGames()
-    {
-
-        String text = """
-      Your trying to play basketball, but there's a long line, do you have the patience to wait in line or cut all the way to the front, which will you choose?
-      1. Wait in line
-      2. Cut 
-      """;
-        System.out.println(text);
-
-
-        if (option == 1)
-        {
-            waitPatiently();
-        }
-        else if (option == 2)
-        {
-            cutLine();
-        }
     }
+
+
+    private void playGames() {
+
+        tvStoryText.setText("When you try to play basketball there's a long line, will you cut?");
+
+        setAllBtnsVisible();
+        btn1.setText("Wait in line");
+        btn2.setText("Cut");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                waitPatiently();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cutLine();
+            }
+        });
+
+
+    }
+
 
     private void cutLine()
     {
 
-        String text = """
-      You cut to the front of the line, but you're stopped by an individual and pushes you to another person, but that other person punches you in the face, and the people watching you suddenly start jumping you until you go unconscious
+        tvStoryText.setText("Before you make it to the front, you are stopped by an individual and is brutally beaten until you pass out. YOU LOSE!");
 
-      YOU LOSE! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { defeat();}
+        });
+
+
     }
 
-    private void waitPatiently()
-    {
 
-        String text = """
-      After an hour of waiting, its your turn to make a shot, you make a shot and    IT WENT INNNNN RAHHHHHH!!!!! Anyways the man in charge asks you if you want to double-or-nothing or accept your prize of candy?
-      1. Double - or - nothing
-      2. Accept your prize
-      """;
-        System.out.println(text);
+    private void waitPatiently() {
+
+        tvStoryText.setText("After an hour of waiting, you shoots some hoops and earn a prize but someones says double it, will you?");
+
+        setAllBtnsVisible();
+        btn1.setText("Double or nothing");
+        btn2.setText("Accept your prize");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doubleIt();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                takeTheWin();
+            }
+        });
 
 
-        if (option == 1)
-        {
-            doubleIt();
-        }
-        else if (option == 2)
-        {
-            takeTheWin();
-        }
     }
+
 
     private void takeTheWin()
     {
 
-        String text = """
-      Since you wanna be a goofy platooey loser and not take your chances and just go home with a portion of candy, your choices leads to you getting home and having a good amount of sleep.
+        tvStoryText.setText("Since you wanna be a loser and not risk it, you take your prize home yay! YOU WIN!");
 
-      YOU WIN! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        start();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { victory();}
+        });
+
+
     }
 
     private void doubleIt()
@@ -404,49 +451,59 @@ public class GameCruzAlejandro extends GameActivity {
         double rand = Math.random();
         if (rand < .30)
         {
-            System.out.println("You WON and they give you a wagon full of candy and you eat the candy until you get diabetes, but you don't regret it since you got a W!!!                 YOU WIN! Try again");
+            tvStoryText.setText("You WON and they give you a wagon full of candy and you eat the candy until you get diabetes, but you don't regret it since you got a W!!!                 YOU WIN! Try again");
         }
         else
         {
-            System.out.println("You loss all your candy and the people laugh at you as you run home crying like a baby                               YOU LOSE! Try again");
+            tvStoryText.setText("You loss all your candy and the people laugh at you as you run home crying like a baby                               YOU LOSE! Try again");
         }
-        System.out.println();
 
-        start();
+        restart();
     }
 
-    private void causeChaos()
-    {
+    private void causeChaos() {
 
-        String text = """
-      Since you want to cause some chaos you have a the option of throwing candy at other people or rekt the carnival stands, which is more of a dick move?
-      1. Throw candy at people
-      2. Destroy carnival stands
-      """;
-        System.out.println(text);
+        tvStoryText.setText("To cause chaos, you steal some candy and throw it at people, what more will you do? ");
+
+        setAllBtnsVisible();
+        btn1.setText("Throw more candy");
+        btn2.setText("Destroy the carnival stands");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                throwCandyAtPeople();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                destroyCarnivalStands();
+            }
+        });
 
 
-        if (option == 1)
-        {
-            throwCandyAtPeople();
-        }
-        else if (option == 2)
-        {
-            destroyCarnivalStands();
-        }
     }
+
 
     private void throwCandyAtPeople()
     {
 
-        String text = """
-      You steal a bucket of candy from a little kid and start throwing it at people and they seem pretty annoyed about it.The kid you stole candy from starts crying and the parents come in and the dad punches you in the gut and calls security on you but before they kick you out, the dad gives you a beating for your disrespectful behavior.Security finally comes and kicks you out.You shamefully go home. 
+        tvStoryText.setText("You keep throwing candy until someone stops you and punches you in the face then they kick you out. YOU LOSE!");
 
-      YOU LOSE! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { defeat();}
+        });
+
+
     }
 
     private void destroyCarnivalStands()
@@ -610,7 +667,7 @@ public class GameCruzAlejandro extends GameActivity {
       """;
         System.out.println(text);
 
-        start();
+        restart();
     }
 
     private void victory()
@@ -634,7 +691,7 @@ public class GameCruzAlejandro extends GameActivity {
         if (numLives > 0)
         {
             //if you still have lives, return to start()
-            start();
+            restart();
         }
         else
         {
