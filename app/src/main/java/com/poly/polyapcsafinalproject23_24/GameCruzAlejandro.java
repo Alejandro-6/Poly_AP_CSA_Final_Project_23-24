@@ -509,166 +509,225 @@ public class GameCruzAlejandro extends GameActivity {
     private void destroyCarnivalStands()
     {
 
-        String text = """
-      You charge at some carnival stands and you have no idea why the people are angry at you, but security jumps at you and pins you down to the ground and they call the cops on you and your on the ground until they arrive and take you away.You are taken to prison for misconduct behavior and since your there you might as well clean yourself, the guards give you a bar of soap and towel to use while showering, but your not alone, there are other inmates there too.Though its all normal and all until you drop the soap infront of the other inmates, they demand you to PICK UP THE SOAP
+        tvStoryText.setText("You grab a baseball bat and destroy the stands, people are angry at you, so they called security on you then called the cops and took you to jail. YOU LOSE!");
 
-      Uh oh....
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-      You screwed up.. Try again
-      """;
-        System.out.println(text);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { defeat();}
+        });
 
-        defeat();
+
     }
 
-    private void goToNeighborhood()
-    {
 
-        String text = """
-      Since you wanna be basic and be predictable, there's still some mischievous things you can do like breaking into someone's home or Trick-or-treat like a normal person, which is better?
-      1. Trespass
-      2. Trick-or-treat
-      """;
-        System.out.println(text);
+    private void goToNeighborhood() {
+
+        tvStoryText.setText("Since this place is boring, you decide to trespass into someones home or just trick-or-treat like a normal person. Which is better? ");
+
+        setAllBtnsVisible();
+        btn1.setText("Trespass");
+        btn2.setText("Trick-or-treat");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                trespassing();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                trickOrTreat();
+            }
+        });
 
 
-        if (option == 1)
-        {
-            trespassing();
-        }
-        else if (option == 2)
-        {
-            trickOrTreat();
-        }
     }
 
-    private void trespassing()
-    {
 
-        String text = """
-      Once you enter the home UNWELCOMED, you hardly can see anything, start looking around for any valuables, but then you suddenly hear footsteps, you begin panicking and are only left with two options go down to the basement or up into the attic, which is best?
-      1. Basement
-      2. Attic
-      """;
-        System.out.println(text);
+    private void trespassing() {
+
+        tvStoryText.setText("Once you enter unannounced, you to steal something but then you hear someone, you panic, you have to go to either the attic or the basement.What will you choose?");
+
+        setAllBtnsVisible();
+        btn1.setText("Basement");
+        btn2.setText("Attic");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToBasement();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToAttic();
+            }
+        });
 
 
-        if (option == 1)
-        {
-            goToBasement();
-        }
-        else if (option == 2)
-        {
-            goToAttic();
-        }
     }
+
 
     private void goToBasement()
     {
 
-        String text = """
-      Your inside the basement, and something's off, but you begin to find it hard to breathe, but you see a package of rotten fruits that stank up the whole basement since there's no ventilation.You fall to the ground as you suffocate to your demise. 
+        tvStoryText.setText("You enter the basement, and you realize that it's hard to breathe and there is no ventilation, so you begin to fall and suffocate. YOU LOSE!");
 
-      YOU LOSE! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { defeat();}
+        });
+
+
     }
+
 
     private void goToAttic()
     {
 
-        String text = """
-      You instead go up into the attic and it's so dark can't see a single thing, and you try to find a light source, but before you can do that, you trip and end falling through the attic and onto the living room landing on your neck, ending you instantly. 
+        tvStoryText.setText("You instead go in the attic and you see nothing, so you try to find the light switch but before you do, the floor breaks and you fall through landing face first, ending you instantly. YOU LOSE!");
 
-      YOU DIED! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { defeat();}
+        });
+
+
     }
 
-    private void trickOrTreat()
-    {
-
-        String text = """
-      You decide to be normal and trick-or-treat but after trick-or-treating for a while you stumble upon an ominous looking house with no lights on, but you go anyways so you knock on the door and surprisingly someone answers, a women dressed up like a witch, but instead of giving you candy, she gives you an invitation to enter, will you accept? 
-      1. Accept
-      2. Reject
-      """;
-        System.out.println(text);
 
 
-        if (option == 1)
-        {
-            acceptInvitation();
-        }
-        else if (option == 2)
-        {
-            goHome();
-        }
+    private void trickOrTreat() {
+
+        tvStoryText.setText("You choose to trick or treat and after a while, you stumble upon an ominous looking home, but you still knock and a lady dressed like a witch answered, she offers to let you inside. Accept?");
+
+        setAllBtnsVisible();
+        btn1.setText("Accept");
+        btn2.setText("Reject");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                acceptInvitation();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goHome();
+            }
+        });
+
+
     }
 
     private void goHome()
     {
 
-        String text = """
-      You go home and feel exhausted, so you sleep, you then wake up in a suspicious neighborhood and see a figure across the streets he has a claw as a hand and burned skin, this person was none other than Freddy Krueger.You try to run, but Freddy immediately stops you and teleports you into his own dimension of hell, that's always on fire.You burn up and scream in agony, but you burn for eternity. 
+        tvStoryText.setText("You instead go home because you don't trust strangers and you sleep like a good boy. YOU WIN!");
 
-      YOU LOSE! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { victory();}
+        });
+
+
     }
 
-    private void acceptInvitation()
-    {
 
-        String text = """
-      You decide to enter a home of a stranger, ok why? Anyways when you enter you see nothing wrong, the lady even offers you cookies, you say yes and she brings the cookies and you know they look unedible, absolutely disgusting, will you still eat them?
-      1. Yes
-      2. No
-      """;
-        System.out.println(text);
+    private void acceptInvitation() {
+
+        tvStoryText.setText("You enter the STRANGER'S home, and she tells you a fairy tale and while you listen she give you cookies. Will you eat?");
+
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                eatFood();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noEatFood();
+            }
+        });
 
 
-        if (option == 1)
-        {
-            eatFood();
-        }
-        else if (option == 2)
-        {
-            noEatFood();
-        }
     }
+
+
 
     private void eatFood()
     {
 
-        String text = """
-      Since your such a gentleman, you eat the cookies then after eating them, she begins telling you her stories, but while your listening, your stomache starts hurting like crazy, so you get up, but your so weaken that you fall to the ground, but the lady smiles at you, telling you that you have been poisoned, as you lay there helpless, she laughs at you for going inside a stranger's house, and calls you stupid as you lay there now dead. 
+        tvStoryText.setText("Since you eat the food,you continue to listen to her stories, though your stomach starts to hurt like crazy you fall to the ground while the lady watches you suffer. YOU LOSE!");
 
-      YOU DIED! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { defeat();}
+        });
+
+
     }
+
 
     private void noEatFood()
     {
 
-        String text = """
-      After looking at her cookies, you tell her that it smells like shit, and you run off with your bucket of candy.Once you get home you eat the candy you collected by trick-or-treating, being satisfied with halloween this year.
+        tvStoryText.setText("You look at her cookies and it smells bad, so you run out of there without looking back. YOU WIN!");
 
-      YOU WIN! Try again!
-      """;
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Try Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        restart();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { victory();}
+        });
+
+
     }
+
 
     private void victory()
     {
