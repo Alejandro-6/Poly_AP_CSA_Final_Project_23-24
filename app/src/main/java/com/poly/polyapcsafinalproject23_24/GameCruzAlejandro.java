@@ -611,6 +611,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void goToBasement()
     {
+        ivStory.setImageResource(R.drawable.the_man_looks_scared_in_an_empty_basement);
 
         tvStoryText.setText("You enter the basement, and you realize that it's hard to breathe and there is no ventilation, so you begin to fall and suffocate. YOU LOSE!");
 
@@ -630,6 +631,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void goToAttic()
     {
+        ivStory.setImageResource(R.drawable.the_man_looks_scared_in_an_empty_attic);
 
         tvStoryText.setText("You instead go in the attic and you see nothing, so you try to find the light switch but before you do, the floor breaks and you fall through landing face first, ending you instantly. YOU LOSE!");
 
@@ -649,6 +651,8 @@ public class GameCruzAlejandro extends GameActivity {
 
 
     private void trickOrTreat() {
+
+        ivStory.setImageResource(R.drawable.a_man_goes_trick_or_treating_in_a_neighborhood_wearing_a_vampire);
 
         tvStoryText.setText("You choose to trick or treat and after a while, you stumble upon an ominous looking home, but you still knock and a lady dressed like a witch answered, she offers to let you inside. Accept?");
 
@@ -676,6 +680,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void goHome()
     {
+        ivStory.setImageResource(R.drawable.the_man_goes_to_sleep);
 
         tvStoryText.setText("You instead go home because you don't trust strangers and you sleep like a good boy. YOU WIN!");
 
@@ -694,6 +699,8 @@ public class GameCruzAlejandro extends GameActivity {
 
 
     private void acceptInvitation() {
+
+        ivStory.setImageResource(R.drawable.a_boy_having_an_big_evil_grin);
 
         tvStoryText.setText("You enter the STRANGER'S home, and she tells you a fairy tale and while you listen she give you cookies. Will you eat?");
 
