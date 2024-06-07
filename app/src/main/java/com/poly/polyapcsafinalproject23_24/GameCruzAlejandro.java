@@ -93,6 +93,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void start()
     {
+        ivStory.setImageResource(R.drawable.a_boy_having_an_big_evil_grin);
 
         tvStoryText.setText("You are trying to decide where you are going to go cause some chaos?");
 
@@ -126,6 +127,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void goToCemetary()
     {
+        ivStory.setImageResource(R.drawable.a_dark_and_scary_cemetery_without_figures_and_skeletons);
 
         tvStoryText.setText("Once you get there, you start to wonder if you want to keep walking around  or just leave.");
 
@@ -153,6 +155,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void continueWalkingAround()
     {
+        ivStory.setImageResource(R.drawable.teenager_holding_a_shovel_in_front_of_a_abandoned_home_in_the_cemetary_at_night_looking_at_the_home);
 
         tvStoryText.setText("There's an abandoned house and a shovel and you have to choose if you want to enter or dig up the tombstones.");
 
@@ -179,6 +182,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void digUpTombstones()
     {
+        ivStory.setImageResource(R.drawable.a_skeleton_wearing_a_robe_in_the_same_cemetary_at_night_hovering_draining_the_life_energy_of_the_teenager);
 
         tvStoryText.setText("Since you decided to dig up the tombstone, you woke up an ancient sorcerer, and he sucked all your life essence. YOU DIED!");
 
@@ -199,6 +203,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void decideToLeave()
     {
+        ivStory.setImageResource(R.drawable.a_killer_clown_at_the_cemetary_holding_a_machete);
 
         tvStoryText.setText("You decide to leave but you see a killer clown with a machete, you gonna fight it or not?.");
 
@@ -225,6 +230,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void fightClown()
     {
+        ivStory.setImageResource(R.drawable.a_guy_holding_a_machete_and_smiling_he_is_at_a_cemetary_at_night_and_he_has_blood_on_his_face);
 
         tvStoryText.setText("Since the clown is fat, you tire him out and take his weapon and eliminate him, then you run off. YOU WIN!");
 
@@ -244,6 +250,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void submitToClown()
     {
+        ivStory.setImageResource(R.drawable.a_man_praying_in_the_cemetary_at_night_he_is_scared_and_on_the_ground);
 
         tvStoryText.setText("Since your frozen in shock, you let him get too close and he slices you throat and you black out. YOU DIED!");
 
@@ -263,6 +270,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void abandonedHome()
     {
+        ivStory.setImageResource(R.drawable.a_abandoned_home_in_the_cemetary_at_night);
 
         tvStoryText.setText("You enter the home and it's dark so you start a fire, but it soon got bigger, choose to...");
 
@@ -290,6 +298,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void putItOut()
     {
+        ivStory.setImageResource(R.drawable.the_abandoned_house_is_on_fire_at_night);
 
         tvStoryText.setText("You try to put it out, but the wind make it bigger and it was too late, you were engulfed in the flames. YOU DIED!");
 
@@ -309,6 +318,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void letItBe()
     {
+        ivStory.setImageResource(R.drawable.the_abandoned_house_is_on_fire_at_night_and_a_teenager_is_running_from_it_at_night);
 
         tvStoryText.setText("Instead, you let it burn since it's a old home and you were never caught. YOU WIN!");
 
@@ -327,6 +337,8 @@ public class GameCruzAlejandro extends GameActivity {
 
 
     private void goToCarnival() {
+
+        ivStory.setImageResource(R.drawable.a_man_heading_into_the_carnival_at_night);
 
         tvStoryText.setText("When you get there, you play games or choose you ruin someone's days.");
 
@@ -355,6 +367,8 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void playGames() {
 
+        ivStory.setImageResource(R.drawable.the_man_is_waiting_in_line_to_head_into_the_carnival_at_night);
+
         tvStoryText.setText("When you try to play basketball there's a long line, will you cut?");
 
         setAllBtnsVisible();
@@ -382,6 +396,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void cutLine()
     {
+        ivStory.setImageResource(R.drawable.the_man_instead_cuts_the_line_at_the_carnival_the_people_are_angry_at_the_man);
 
         tvStoryText.setText("Before you make it to the front, you are stopped by an individual and is brutally beaten until you pass out. YOU LOSE!");
 
@@ -400,6 +415,8 @@ public class GameCruzAlejandro extends GameActivity {
 
 
     private void waitPatiently() {
+
+        ivStory.setImageResource(R.drawable.the_man_is_more_happy_after_winning_a_prize_at_the_carnival);
 
         tvStoryText.setText("After an hour of waiting, you shoots some hoops and earn a prize but someones says double it, will you?");
 
@@ -428,6 +445,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void takeTheWin()
     {
+        ivStory.setImageResource(R.drawable.the_man_is_more_happy_after_winning_a_prize_at_the_carnival_and_he_leaves_the_carnival_with_his_prize);
 
         tvStoryText.setText("Since you wanna be a loser and not risk it, you take your prize home yay! YOU WIN!");
 
@@ -451,10 +469,14 @@ public class GameCruzAlejandro extends GameActivity {
         double rand = Math.random();
         if (rand < .30)
         {
+            ivStory.setImageResource(R.drawable.the_same_man_celebrates_with_two_plushies_at_the_carnival_at_night);
+
             tvStoryText.setText("You WON and they give you a wagon full of candy and you eat the candy until you get diabetes, but you don't regret it since you got a W!!!                 YOU WIN! Try again");
         }
         else
         {
+            ivStory.setImageResource(R.drawable.a_man_crying_on_the_floor_at_a_carnival);
+
             tvStoryText.setText("You loss all your candy and the people laugh at you as you run home crying like a baby                               YOU LOSE! Try again");
         }
 
@@ -462,6 +484,8 @@ public class GameCruzAlejandro extends GameActivity {
     }
 
     private void causeChaos() {
+
+        ivStory.setImageResource(R.drawable.the_same_man_is_throwing_candy_at_people_at_the_carnival_he_throws_is_agressively);
 
         tvStoryText.setText("To cause chaos, you steal some candy and throw it at people, what more will you do? ");
 
@@ -490,6 +514,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void throwCandyAtPeople()
     {
+        ivStory.setImageResource(R.drawable.the_same_man_is_throwing_candy_at_people_at_the_carnival_he_throws_is_agressively_more_candy);
 
         tvStoryText.setText("You keep throwing candy until someone stops you and punches you in the face then they kick you out. YOU LOSE!");
 
@@ -508,6 +533,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void destroyCarnivalStands()
     {
+        ivStory.setImageResource(R.drawable.the_same_man_is_destroying_carnival_stands_at_night);
 
         tvStoryText.setText("You grab a baseball bat and destroy the stands, people are angry at you, so they called security on you then called the cops and took you to jail. YOU LOSE!");
 
@@ -526,6 +552,8 @@ public class GameCruzAlejandro extends GameActivity {
 
 
     private void goToNeighborhood() {
+
+        ivStory.setImageResource(R.drawable.a_man_walking_around_a_neighborhood_on_halloween_at_dark);
 
         tvStoryText.setText("Since this place is boring, you decide to trespass into someones home or just trick-or-treat like a normal person. Which is better? ");
 
@@ -553,6 +581,8 @@ public class GameCruzAlejandro extends GameActivity {
 
 
     private void trespassing() {
+
+        ivStory.setImageResource(R.drawable.the_man_breaks_into_a_house);
 
         tvStoryText.setText("Once you enter unannounced, you to steal something but then you hear someone, you panic, you have to go to either the attic or the basement.What will you choose?");
 
