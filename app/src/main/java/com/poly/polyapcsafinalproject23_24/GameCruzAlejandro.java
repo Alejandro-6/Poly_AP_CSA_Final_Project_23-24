@@ -700,7 +700,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void acceptInvitation() {
 
-        ivStory.setImageResource(R.drawable.a_boy_having_an_big_evil_grin);
+
 
         tvStoryText.setText("You enter the STRANGER'S home, and she tells you a fairy tale and while you listen she give you cookies. Will you eat?");
 
