@@ -700,7 +700,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void acceptInvitation() {
 
-
+        ivStory.setImageResource(R.drawable.the_lady_lets_the_man_inside_her_house_at_night_darker_with_halloween_decorations);
 
         tvStoryText.setText("You enter the STRANGER'S home, and she tells you a fairy tale and while you listen she give you cookies. Will you eat?");
 
@@ -730,6 +730,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void eatFood()
     {
+        ivStory.setImageResource(R.drawable.the_lady_is_watching_the_man_on_the_ground_inside_a_house_the_lady_is_wearing_all_black);
 
         tvStoryText.setText("Since you eat the food,you continue to listen to her stories, though your stomach starts to hurt like crazy you fall to the ground while the lady watches you suffer. YOU LOSE!");
 
@@ -749,6 +750,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void noEatFood()
     {
+        ivStory.setImageResource(R.drawable.the_man_is_running_away_from_a_house_with_halloween_decorations);
 
         tvStoryText.setText("You look at her cookies and it smells bad, so you run out of there without looking back. YOU WIN!");
 
