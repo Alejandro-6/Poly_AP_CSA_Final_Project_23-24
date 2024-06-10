@@ -43,7 +43,7 @@ public class GameCruzAlejandro extends GameActivity {
 
         tvTitle.setText("Halloween Mischief");
         tvSubtitle.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.a_teenager_evil_grinning);
         tvStoryText.setText("For Halloween, you decide to be a complete savage and need to decide, where would you want to cause mischief?");
 
         setAllBtnsVisible();
@@ -472,6 +472,8 @@ public class GameCruzAlejandro extends GameActivity {
             ivStory.setImageResource(R.drawable.the_same_man_celebrates_with_two_plushies_at_the_carnival_at_night);
 
             tvStoryText.setText("You WON and they give you a wagon full of candy and you eat the candy until you get diabetes, but you don't regret it since you got a W!!!                 YOU WIN! Try again");
+
+
         }
         else
         {
@@ -770,7 +772,7 @@ public class GameCruzAlejandro extends GameActivity {
 
     private void victory()
     {
-
+        restart();
     }
 
 
